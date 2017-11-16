@@ -1,6 +1,6 @@
 defmodule Drop do
-    def fall_velocity(distance) do
+    def fall_velocity(distance, gravity \\ 9.8) do
         import :math, only: [sqrt: 1]
-        sqrt(2 * 9.8 * distance)
+        sqrt(2 * gravity * distance)
     end
 end
