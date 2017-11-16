@@ -1,19 +1,13 @@
-defmodule Drop do
-    @moduledoc """
-    Функции вычисления скорости свободного падающего объекта в вакууме
-    *Introducing Elixir*, Second Edition
-    """
+defmodule Drop do   
+    def fall_velocity(:earth, distance) do
+        :math.sqrt(2 * 9.8 * distance)
+    end
 
-    @vsn 0.1
+    def fall_velocity(:moon, distance) do
+        :math.sqrt(2 * 1.6 * distance)
+    end
 
-    @doc """
-    вычисляет скорость свободного падающего объекта на Земле,
-    как если бы он падал в вакууме
-    """
-
-    @spec fall_velocity(number(), number()) :: float()
-    def fall_velocity(distance, gravity \\ 9.8) do
-        import :math, only: [sqrt: 1]
-        sqrt(2 * gravity * distance)
+    def fall_velocity(:marc, distance) do
+        :math.sqrt(2 * 3.71 * distance)
     end
 end
