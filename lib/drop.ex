@@ -3,6 +3,8 @@ defmodule Drop do
     вычисляет скорость свободного падающего объекта на Земле,
     как если бы он падал в вакууме
     """
+
+    @spec fall_velocity(number(), number()) :: float()
     def fall_velocity(distance, gravity \\ 9.8) do
         import :math, only: [sqrt: 1]
         sqrt(2 * gravity * distance)
