@@ -1,13 +1,17 @@
 defmodule Drop do   
-    def fall_velocity({:earth, distance}) when distance >= 0 do
+    def fall_velocity({planemo, distance}) when distance >= 0 do
+        fall_velocity(planemo, distance)
+    end
+    
+    defp fall_velocity(:earth, distance) when distance >= 0 do
         :math.sqrt(2 * 9.8 * distance)
     end
 
-    def fall_velocity({:moon, distance}) when distance >= 0 do
+    defp fall_velocity(:moon, distance) when distance >= 0 do
         :math.sqrt(2 * 1.6 * distance)
     end
 
-    def fall_velocity({:marc, distance}) when distance >= 0 do
+    defp fall_velocity(:marc, distance) when distance >= 0 do
         :math.sqrt(2 * 3.71 * distance)
     end
 end
