@@ -1,3 +1,4 @@
+# вспомогательные функции!
 defmodule Combined do
     import Convert
 
